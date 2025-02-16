@@ -10,6 +10,13 @@
     <input type="submit" value="Create"/>
 </form>
 
+<h3>List of Markets
+@isset($count)
+({{$count}} total)
+@endisset
+: </h3>
+
+
 @isset($marketinfos)
     @each('market.marketlistitem', $marketinfos, 'market', 'market.marketlistempty')
 @endisset

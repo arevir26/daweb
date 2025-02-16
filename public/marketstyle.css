@@ -1,1 +1,42 @@
+*{
+    box-sizing: border-box;
+}
 body{background-color: khaki;}
+
+form {
+    
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#address, #info{
+    padding: 1rem;
+    min-width: 350pt;
+}
+
+#sub{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.frow{
+    display: flex;
+    padding: 0.5rem;
+    flex-basis: 1;
+}
+
+.frow > div{
+    min-width: 150pt;
+}
+
+
+.frow option{
+    width: 100%;
+}

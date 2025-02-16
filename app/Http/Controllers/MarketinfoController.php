@@ -12,7 +12,13 @@ class MarketinfoController extends Controller
      */
     public function index()
     {
-        return view('market.list', ['marketinfos' => Marketinfo::all()]);
+        $data['marketinfos'] = Marketinfo::all();
+        $data['count'] = Marketinfo::all()->count();
+        return view('market.list', $data);
+    }
+
+    private function getAddress(){
+        return "This is my Address";
     }
 
     /**
@@ -66,6 +72,11 @@ class MarketinfoController extends Controller
         $marketinfo->other_address = $request->input('other_address');
         $marketinfo->gps_lat = $request->input('gps_lat');
         $marketinfo->gps_long = $request->input('gps_long');
+        $marketinfo->market_admin = $request->input('market_admin');
+        $marketinfo->contact = $request->input('contact');
+        $marketinfo->market_type = $request->input('market_type');
+        $marketinfo->management = $request->input('management');
+        $marketinfo->vendor_demographics= $request->input('vendor_demographics');
         $marketinfo->save();
         return redirect()->route('market');
     }
