@@ -60,6 +60,10 @@ class MarketinfoController extends Controller
     {
         $validated = $request->validate(['market_name'=> 'required']);
         $marketinfo->market_name = $validated['market_name'];
+        $marketinfo->province = $request->input('province');
+        $marketinfo->municipality = $request->input('municipality');
+        $marketinfo->barangay = $request->input('barangay');
+        $marketinfo->other_address = $request->input('other_address');
         $marketinfo->save();
         return redirect()->route('market');
     }
