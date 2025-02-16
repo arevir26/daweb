@@ -8,7 +8,7 @@ Route::get('/', function () {
 });
 
 Route::get('/market', [MarketinfoController::class, 'index'])->name('market');
-Route::get('/market/create',[MarketinfoController::class, 'create'] );
+Route::get('/market/create',[MarketinfoController::class, 'create'] )->name('market.createnew');
 Route::post('/market/create',[MarketinfoController::class, 'store'] )->name('market.create');
 Route::get('/market/{marketinfo?}',[MarketinfoController::class, 'show'] )->name('market.show');
 Route::get('/market/{marketinfo?}/update',[MarketinfoController::class, 'edit'] );

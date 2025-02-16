@@ -1,24 +1,24 @@
-
-
 @include('include.header')
 
-<h1>Markets</h1>
+<div id="main">
+    <div id="sidebar">
+    @include('include.marketsidebar')
+    </div>
+    <div id="content">
+        <h3 id="listHead">List of Markets
+        @isset($count)
+        ({{$count}} total)
+        @endisset
+        : </h3>
+        
+        <div id="mListCon">
+        @isset($marketinfos)
+            @each('market.marketlistitem', $marketinfos, 'market', 'market.marketlistempty')
+        @endisset
+        
+        </div>
+    </div>
+</div>
 
-<form method="POST" action="{{route('market.create')}}">
-    @csrf
-    <input type="text" name="market_name" placeholder="Market Name"/>
-    <input type="submit" value="Create"/>
-</form>
-
-<h3>List of Markets
-@isset($count)
-({{$count}} total)
-@endisset
-: </h3>
-
-
-@isset($marketinfos)
-    @each('market.marketlistitem', $marketinfos, 'market', 'market.marketlistempty')
-@endisset
 
 @include('include.footer')

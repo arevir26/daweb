@@ -26,7 +26,8 @@ class MarketinfoController extends Controller
      */
     public function create()
     {
-        return view('market.create');
+        $data['market'] = new Marketinfo();
+        return view('market.update', $data);
     }
 
     /**
