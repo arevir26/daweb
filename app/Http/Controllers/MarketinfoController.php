@@ -64,6 +64,8 @@ class MarketinfoController extends Controller
         $marketinfo->municipality = $request->input('municipality');
         $marketinfo->barangay = $request->input('barangay');
         $marketinfo->other_address = $request->input('other_address');
+        $marketinfo->gps_lat = $request->input('gps_lat');
+        $marketinfo->gps_long = $request->input('gps_long');
         $marketinfo->save();
         return redirect()->route('market');
     }

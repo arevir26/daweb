@@ -24,6 +24,13 @@
             <div>Street/Purok</div>
             <div><input type="text" name="other_address" placeholder="Street" value="{{$market->other_address}}"/></div>
         </div>
+        <div class="frow">
+            <div>GPS Coordinates:</div>
+            <div>
+                <input type="number" step=any name="gps_lat" value="{{$market->gps_lat}}" placeholder="Latitude"/>
+                <input type="number" step=any name="gps_long" value="{{$market->gps_long}}" placeholder="Longitude"/>
+            </div>
+        </div>
     </fieldset>
     
     
