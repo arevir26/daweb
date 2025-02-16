@@ -27,8 +27,53 @@
         </div>
         <div class="frow">
             <div>Vendor Demographics:</div>
-            <div><input type="text" name="vendor_demographics" placeholder="Vendor Demographics" value="{{$market->vendor_demographics}}" required></div>
+            <div><input type="text" name="vendor_demographics" placeholder="Vendor Demographics" value="{{$market->vendor_demographics}}"></div>
         </div>
+        <div class="frow">
+            <div>Turnover Rate:</div>
+            <div><input type="text" name="turn_over_rate" placeholder="Turnover Rate" value="{{$market->turn_over_rate}}" ></div>
+        </div>
+        <div class="frow">
+            <div>Oprating Hours</div>
+            <div><input type="time" name="open_hour"  value="{{$market->open_hour}}" > - 
+                <input type="time" name="close_hour"  value="{{$market->close_hour}}" >
+            </div>
+        </div>
+        <div class="frow">
+            <div>Market Day (Peak)</div>
+            <div><input type="text" name="peak_day" placeholder="Market Day" value="{{$market->peak_day}}" ></div>
+        </div>
+        <div class="frow">
+            <div>Start of Peak Hour</div>
+            <div><input type="time" name="peak_hour_start"  value="{{$market->peak_hour_start}}" > - 
+                <input type="time" name="peak_hour_end"  value="{{$market->peak_hour_end}}" >
+            </div>
+        </div>
+        <div class="frow">
+            <div>Foot Traffic</div>
+            <div>
+                <input type="number" name="foot_traffic" placeholder="Foot Traffic" value="{{$market->foot_traffic}}" >
+            </div>
+        </div>
+        <div class="frow">
+            <div>Area</div>
+            <div>
+                <input type="number" step="any" name="area" placeholder="Area" value="{{$market->area}}" >
+            </div>
+        </div>
+        <div class="frow">
+            <div>Date Profiled</div>
+            <div>
+                <input type="date"  name="date_profiled" value="{{$market->date_profiled}}" >
+            </div>
+        </div>
+        <div class="frow">
+            <div>Date Updated</div>
+            <div>
+                <input type="date" name="date_updated" value="{{$market->date_updated}}" >
+            </div>
+        </div>
+        
     </fieldset>
     </div>
     <div  id="address">

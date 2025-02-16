@@ -77,6 +77,16 @@ class MarketinfoController extends Controller
         $marketinfo->market_type = $request->input('market_type');
         $marketinfo->management = $request->input('management');
         $marketinfo->vendor_demographics= $request->input('vendor_demographics');
+        $marketinfo->turn_over_rate= $request->input('turn_over_rate');
+        $marketinfo->open_hour= $request->input('open_hour');
+        $marketinfo->close_hour= $request->input('close_hour');
+        $marketinfo->peak_day= $request->input('peak_day');
+        $marketinfo->peak_hour_start= $request->input('peak_hour_start');
+        $marketinfo->peak_hour_end= $request->input('peak_hour_end');
+        $marketinfo->foot_traffic= $request->input('foot_traffic');
+        $marketinfo->area= $request->input('area');
+        $marketinfo->date_profiled= $request->input('date_profiled');
+        $marketinfo->date_updated = $request->input('date_updated');
         $marketinfo->save();
         return redirect()->route('market');
     }
