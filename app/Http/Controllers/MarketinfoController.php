@@ -47,9 +47,7 @@ class MarketinfoController extends Controller
      */
     public function show(Marketinfo $marketinfo)
     {
-        echo '<pre>';
-        print_r($marketinfo);
-        echo '</pre>';
+        return view('market.show', ['market' => $marketinfo]);
     }
 
     /**
@@ -100,4 +98,5 @@ class MarketinfoController extends Controller
         $marketinfo->delete();
         return redirect()->route('market');
     }
+
 }
