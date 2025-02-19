@@ -128,11 +128,23 @@ body{background-color: rgb(233, 233, 233);
     color: black;
 }
 
-#listhead{
-    margin-left: 1rem;
+#market_name{
+    margin-left: 2rem;
+    font-size: 1.5rem;
 }
 
 #marketinfo{
     padding: 1rem;
 }
+
+#marketinfo span{
+    font-weight: bold;
+    display: inline-block;
+    min-width: 200px;
+}
+
+#marketinfo div {
+    margin: 0.75rem;
+}
+
 
