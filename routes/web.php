@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MarketinfoController;
+use App\Http\Controllers\StallCategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,3 +15,6 @@ Route::get('/market/{marketinfo?}',[MarketinfoController::class, 'show'] )->name
 Route::get('/market/{marketinfo?}/update',[MarketinfoController::class, 'edit'] );
 Route::post('/market/{marketinfo?}/update',[MarketinfoController::class, 'update'] );
 Route::get('/market/{marketinfo?}/remove',[MarketinfoController::class, 'destroy'] );
+
+Route::get('/stallcategory', [StallCategoryController::class, 'index'])->name('stallcategory');
+Route::post('/stallcategory/add', [StallCategoryController::class, 'create']);
