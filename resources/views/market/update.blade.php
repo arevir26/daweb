@@ -39,7 +39,7 @@
                     <div><input type="text" name="turn_over_rate" placeholder="Turnover Rate" value="{{$market->turn_over_rate}}" ></div>
                 </div>
                 <div class="frow">
-                    <div>Oprating Hours</div>
+                    <div>Operating Hours</div>
                     <div><input type="time" name="open_hour"  value="{{$market->open_hour}}" > - 
                         <input type="time" name="close_hour"  value="{{$market->close_hour}}" >
                     </div>
