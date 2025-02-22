@@ -4,15 +4,7 @@
         @include('include.marketsidebar')
     </div>
     <div id="content">
-        <form method="POST">
-            @csrf
-            <div><input type="text" name="stall_category" />
-                <input type="submit" value="Add" />
-            </div>
-        </form>
-        @foreach ($collection as $item)
-            
-        @endforeach
+        <livewire:StallList/>
     </div>
 </div>
 @include('include.footer')

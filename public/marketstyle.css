@@ -78,6 +78,15 @@ body{background-color: rgb(233, 233, 233);
     color: white;
 }
 
+#listHead{
+    padding-left: 2rem;
+}
+
+#stallcategoryform{
+    padding: 1rem 2rem;
+    text-align: right;
+}
+
 .mItem{
     display: flex;
     margin-left: 1rem;
@@ -92,6 +101,10 @@ body{background-color: rgb(233, 233, 233);
 
 .itemTitle{
     flex-grow: 1;
+}
+
+div.itemTitle{
+    padding: 1rem;
 }
 
 .mItem a{
