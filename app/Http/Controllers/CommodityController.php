@@ -12,7 +12,8 @@ class CommodityController extends Controller
      */
     public function index()
     {
-        return view('commodities.list');
+        $data['title'] = 'Market Commodities';
+        return view('commodities.list', $data);
     }
 
     /**

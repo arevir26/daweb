@@ -14,6 +14,7 @@ class MarketinfoController extends Controller
     {
         $data['marketinfos'] = Marketinfo::all();
         $data['count'] = Marketinfo::all()->count();
+        $data['title'] = 'Market Information';
         return view('market.list', $data);
     }
 
@@ -27,6 +28,7 @@ class MarketinfoController extends Controller
     public function create()
     {
         $data['market'] = new Marketinfo();
+        $data['title'] = 'Add Market Information';
         return view('market.update', $data);
     }
 
@@ -55,7 +57,9 @@ class MarketinfoController extends Controller
      */
     public function edit(Marketinfo $marketinfo)
     {
-        return view('market.update', ['market' => $marketinfo]);
+        $data['title'] = 'Update Market Information';
+        $data['market'] = $marketinfo;
+        return view('market.update', $data);
     }
 
     /**

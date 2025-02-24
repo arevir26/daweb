@@ -13,6 +13,7 @@ class StallCategoryController extends Controller
     public function index()
     {
         $data['stalls'] = StallCategory::all();
+        $data['title'] = 'Market Stall Categories';
         return view('stallcategory.list', $data);
     }
 
