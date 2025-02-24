@@ -13,7 +13,11 @@ return new class extends Migration
     {
         Schema::create('market_commodities', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('market_id');
+            $table->foreignId('commodity_id');
+            $table->string('source')->nullable();
+            $table->float('volume')->nullable();
+            $table->integer('traders')->nullable();
         });
     }
 

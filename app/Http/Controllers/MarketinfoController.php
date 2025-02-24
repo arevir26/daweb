@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MarketCommodity;
 use App\Models\Marketinfo;
 use Illuminate\Http\Request;
 
@@ -49,7 +50,9 @@ class MarketinfoController extends Controller
      */
     public function show(Marketinfo $marketinfo)
     {
-        return view('market.show', ['market' => $marketinfo]);
+        $data['market'] = $marketinfo;
+        $data['commodities'] = $marketinfo->commodities->all();
+        return view('market.show', $data);
     }
 
     /**

@@ -8,4 +8,5 @@ class Commodity extends Model
 {
     public $fillable = ['commodity_name'];
     public $timestamps = false;
+
 }
