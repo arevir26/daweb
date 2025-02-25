@@ -2,7 +2,7 @@
     @isset($market_id)
     <form action="" wire:submit.prevent="addCommodity()">
         <h4>Market Commodities, Volume and Sources</h4>
-        <table>
+        <table id="mCom">
             <tr>
                 <td>Commodity</td>
                 <td>Monthly Volume</td>
@@ -19,7 +19,7 @@
                         @endisset
                     </select>
                 </td>
-                <td><input type="number" step=any name="volume"  wire:model="volume" /></td>
+                <td><input style="max-width:100px" type="number" step=any name="volume"  wire:model="volume" /></td>
                 <td><input type="text" name="source" wire:model="source" /></td>
                 <td colspan="2">
                     @if ($isUpdate)
@@ -29,7 +29,6 @@
                     @endif
                 </td>
             </tr>
-
             @foreach ($market_commodities as $market_commodity)
             <tr wire:key="{{$market_commodity->id}}">
                 <td>
@@ -51,7 +50,6 @@
                     <a href="#" wire:click.prevent="edit({{$market_commodity->id}})" >Edit</a>
                     <a href="#" wire:click.prevent="remove({{$market_commodity->id}})" >Remove</a>
                 </td>
-
             </tr>
         @endforeach
 
