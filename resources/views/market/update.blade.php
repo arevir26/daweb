@@ -130,6 +130,10 @@
             @endif
             
         </form>
+        @isset($market->id)
+        <livewire:MarketCommoditiesPanel :market_id="$market->id" />
+        @endisset
+        
     </div>
 </div>
 @include('include.footer')

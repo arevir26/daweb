@@ -74,6 +74,8 @@
             {{$commodity->name->commodity_name}} - {{$commodity->volume}} - {{$commodity->traders}}
         @endforeach
         </div>
+
+        <livewire:MarketCommoditiesPanel :market_id="$market->id" />
         </div>
     </div>
 </div>
