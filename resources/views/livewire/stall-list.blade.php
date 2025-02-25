@@ -19,8 +19,9 @@
     
     @isset($stalls)
     @foreach ($stalls as $stall)
-        <div class="mItem"> <div class="itemTitle">{{$stall->category_name}}</div><a href="#" wire:click.prevent="edit({{$stall->id}})">Edit</a>
-        <a href="" wire:confirm="Do you want to remove this item?" wire:click.prevent="remove({{$stall->id}})">Remove</a></div>
+    <div class="mItem" wire:key="{{$stall->id}}"> <div class="itemTitle">{{$stall->category_name}}</div><a href="#" wire:click.prevent="edit({{$stall->id}})">Edit</a>
+        <a href="" wire:confirm="Do you want to remove this item?" wire:click.prevent="remove({{$stall->id}})">Remove</a>
+    </div>
     @endforeach
         
     @endisset
