@@ -70,12 +70,7 @@
         @isset($market->date_updated)
             <div><span>Date Updated:</span> {{$market->date_updated}} </div>
         @endisset
-        @foreach ($commodities as $commodity)
-            {{$commodity->name->commodity_name}} - {{$commodity->volume}} - {{$commodity->traders}}
-        @endforeach
         </div>
-
-        <livewire:MarketCommoditiesPanel :market_id="$market->id" />
         </div>
     </div>
 </div>
