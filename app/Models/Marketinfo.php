@@ -13,4 +13,9 @@ class MarketInfo extends Model
     {
         return $this->hasMany(MarketCommodity::class, 'market_id');
     }
+
+    public function stalls():HasMany
+    {
+        return $this->hasMany(MarketStall::class, 'market_id', 'id');
+    }
 }

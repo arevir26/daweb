@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('market_stalls', function (Blueprint $table) {
             $table->id();
             $table->foreignId('market_id');
-            $table->foreign('stall_category');
+            $table->foreignId('stall_category');
             $table->integer('stall_count')->nullable();
             $table->integer('stall_owners')->nullable();
         });
