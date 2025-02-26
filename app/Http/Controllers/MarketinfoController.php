@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MarketCommodity;
 use App\Models\Marketinfo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MarketinfoController extends Controller
 {
@@ -102,7 +103,10 @@ class MarketinfoController extends Controller
      */
     public function destroy(Marketinfo $marketinfo)
     {
+        
+        DB::table('market_commodities')->where('market_id', '=', $marketinfo->id)->delete();
         $marketinfo->delete();
+
         return redirect()->route('market');
     }
 
