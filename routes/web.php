@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommodityController;
 use App\Http\Controllers\MarketinfoController;
+use App\Http\Controllers\OtherInfoType;
 use App\Http\Controllers\StallCategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,4 @@ Route::get('/market/{marketinfo?}/remove',[MarketinfoController::class, 'destroy
 
 Route::get('/stallcategory', [StallCategoryController::class, 'index'])->name('stallcategory');
 Route::get('/commodities', [CommodityController::class, 'index'])->name('commodities');
+Route::get('/otherinfo', [OtherInfoType::class, 'index'])->name('otherinfotype');
