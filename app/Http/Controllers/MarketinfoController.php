@@ -105,8 +105,9 @@ class MarketinfoController extends Controller
     {
         
         DB::table('market_commodities')->where('market_id', '=', $marketinfo->id)->delete();
+        DB::table('market_stalls')->where('market_id','=', $marketinfo->id)->delete();
         $marketinfo->delete();
-
+        
         return redirect()->route('market');
     }
 

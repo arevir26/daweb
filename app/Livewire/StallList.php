@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\StallCategory;
+use Illuminate\Support\Facades\DB;
+use League\CommonMark\Reference\Reference;
 use Livewire\Component;
 
 class StallList extends Component
@@ -10,6 +12,8 @@ class StallList extends Component
     public $stall_category;
     public $isUpdate = false;
     public $stall_id;
+
+
     public function render()
     {
         $data['stalls'] = StallCategory::all();
@@ -42,6 +46,9 @@ class StallList extends Component
     }
 
     public function remove(StallCategory $stall_cat){
+        //prevents deletion if still in use
+        $reference = DB::table('market_stalls')->where('stall_category','=', $stall_cat->id)->count();
+        if($reference>0)return;
         $stall_cat->delete();
     }
     

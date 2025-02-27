@@ -47,6 +47,7 @@ class MarketStallsPanel extends Component
     }
 
     public function remove(MarketStall $stall){
+
         $stall->delete();
     }
 
