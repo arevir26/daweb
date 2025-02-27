@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Commodity;
+use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 
 class CommodityList extends Component
@@ -44,6 +45,9 @@ class CommodityList extends Component
     }
 
     public function remove(Commodity $commodity){
+        //prevents deletion of used/referenced commodities
+        $reference = DB::table('market_commodities')->where('commodity_id', '=', $commodity->id)->count();
+        if($reference>0)return;
         $commodity->delete();
     }
     
