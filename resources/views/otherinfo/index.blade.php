@@ -5,12 +5,7 @@
     @include('include.marketsidebar')
     </div>
     <div id="content">
-        <h3 id="listHead">Other Market Info</h3>
-        
-        <div id="mListCon">
-        </div>
-
-
+        <livewire:AddOtherInfoTypePanel />
     </div>
 </div>
 
