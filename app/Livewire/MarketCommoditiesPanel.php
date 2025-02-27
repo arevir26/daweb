@@ -11,9 +11,11 @@ class MarketCommoditiesPanel extends Component
 {
     public $market_id;
     public $volume;
+    public $traders;
     public $source;
     public $commodity_id;
     public $market_commodity_id;
+    
     public $isUpdate = null;
 
     public function render()
@@ -37,10 +39,12 @@ class MarketCommoditiesPanel extends Component
         $market_commodity->commodity_id = $this->commodity_id;
         $market_commodity->source = $this->source;
         $market_commodity->volume = $this->volume;
+        $market_commodity->traders = $this->traders;
         $market_commodity->save();
         $this->commodity_id = "";
         $this->source = "";
         $this->volume = "";
+        $this->traders = "";
         $this->isUpdate = false;
     }
 
@@ -51,6 +55,7 @@ class MarketCommoditiesPanel extends Component
     public function edit(MarketCommodity $market_commodity){
         $this->volume = $market_commodity->volume;
         $this->source = $market_commodity->source;
+        $this->traders = $market_commodity->traders;
         $this->commodity_id = $market_commodity->name->id;
         $this->market_commodity_id = $market_commodity->id;
         $this->isUpdate = true;

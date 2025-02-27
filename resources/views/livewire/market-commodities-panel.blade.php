@@ -6,6 +6,7 @@
             <tr>
                 <td>Commodity</td>
                 <td>Monthly Volume</td>
+                <td>Number of Traders</td>
                 <td>Source</td>
             </tr>
             <tr>
@@ -20,6 +21,7 @@
                     </select>
                 </td>
                 <td><input style="max-width:100px" type="number" step=any name="volume"  wire:model="volume" /></td>
+                <td><input style="max-width:100px" type="number" step=any name="volume"  wire:model="traders" /></td>
                 <td><input type="text" name="source" wire:model="source" /></td>
                 <td colspan="2">
                     @if ($isUpdate)
@@ -39,6 +41,11 @@
                 <td>
                     @isset($market_commodity->volume)
                     {{$market_commodity->volume}}
+                    @endisset
+                </td>
+                <td>
+                    @isset($market_commodity->traders)
+                    {{$market_commodity->traders}}
                     @endisset
                 </td>
                 <td>
