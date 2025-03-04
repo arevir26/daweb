@@ -1,7 +1,7 @@
 <div>
     <h3 id="listHead">Other Market Info Category</h3>
     @if ($isUpdate)
-    <form id="stallcategoryform" wire:submit.prevent="update({{$otherinfo_id}})" method="POST">
+    <form id="stallcategoryform" wire:submit.prevent="add" method="POST">
         @csrf
         <div><input type="text" wire:model="info_name" />
             <input type="submit" value="Change" />

@@ -18,9 +18,16 @@ class AddOtherInfoTypePanel extends Component
     }
 
     public function add(){
-        $otherinfo = new OtherInfoType();
+        if($this->otherinfo_id==null){
+            $otherinfo = new OtherInfoType();
+        }else{
+            $otherinfo = OtherInfoType::find($this->otherinfo_id);
+        }
         $otherinfo->name = $this->info_name;
         $otherinfo->save();
+        $this->otherinfo_id = null;
+        $this->isUpdate = null;
+        $this->info_name = null;
     }
 
     public function edit(OtherInfoType $otherinfotype){
@@ -30,6 +37,6 @@ class AddOtherInfoTypePanel extends Component
     }
 
     public function remove(OtherInfoType $otherinfotype){
-        $otherinfotype->delete();
+        $otherinfotype->delete(); 
     }
 }
