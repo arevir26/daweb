@@ -11,19 +11,16 @@ body{background-color: rgb(233, 233, 233);
 #main{
     display: flex;
     background-color: white;
-    flex-wrap: wrap;
     flex-basis: 1;
 }
 #sidebar{
     background-color:rgb(248, 248, 248);
-    max-width: 250px;
-    min-width: 250px;
-    justify-self: stretch;
+    min-width: 200px;
 }
 
 #content{
     min-height: 80vh;
-    flex-grow: 1;
+    flex-grow: 2;
 }
 
 #update{
@@ -173,4 +170,55 @@ div.itemTitle{
     max-width: 10rem;
 }
 
+.otherinfoitem{
+    background-color: blanchedalmond;
+}
 
+.otherinfopanel{
+    background-color: orange;
+}
+
+.infoCat{
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+}
+
+.infoCat span{
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.infoCat a {
+    display: inline-block;
+    background-color: red;
+    padding: 0.5rem;
+    color: black;
+    text-decoration: none;
+}
+
+.infoDesc{
+    margin: 0.5rem;
+}
+
+#OtherInfoInputPane{
+    background-color: cyan;
+    padding: 1rem;
+}
+
+#marketOtherInfo{
+    width: 100%;
+}
+#otherinputbottompanel{
+    display: flex;
+    margin-top: 1rem;
+}
+#otherinputbottompanel input{
+    display: block;
+}
+
+#infotitle{
+    flex-grow: 1;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
