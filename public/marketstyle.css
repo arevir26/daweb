@@ -1,11 +1,13 @@
 *{
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-wrap: anywhere;
 }
 body{background-color: rgb(233, 233, 233);
     max-width: 1024px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 #main{
@@ -96,6 +98,9 @@ body{background-color: rgb(233, 233, 233);
     background-color: aliceblue;
 }
 
+thead{
+    font-weight: bold;
+}
 .itemTitle{
     flex-grow: 1;
 }
@@ -170,11 +175,18 @@ div.itemTitle{
     max-width: 10rem;
 }
 
+#mCom tr td:nth-child(3){
+    text-align: center;
+    max-width: 10rem;
+}
+
+
+
 .otherinfoitem{
     border-bottom: solid 1px gray;
 }
 
-.otherinfopanel{
+.inputpanel{
     margin: 0.5rem;
 }
 
@@ -227,8 +239,20 @@ div.itemTitle{
     padding: 1rem;
 }
 
-.panelhead{
+.panelhead {
     border-bottom: dashed 1px grey;
     border-Top: dashed 1px grey;
     padding: 1rem 0.5rem;
+}
+
+@media only screen and (max-width: 800px){
+    #main{
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    #sidebar ul{
+        display: flex;
+        flex-direction: row;
+    }
 }

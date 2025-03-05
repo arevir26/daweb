@@ -1,14 +1,15 @@
-<div>
+<div class="inputpanel">
     @isset($market_id)
+    <h3 class="panelhead" >Market Commodities, Volume and Sources</h3>
     <form action="" wire:submit.prevent="addCommodity()">
-        <h4>Market Commodities, Volume and Sources</h4>
+        
         <table id="mCom">
-            <tr>
+            <thead>
                 <td>Commodity</td>
                 <td>Monthly Volume</td>
                 <td>Number of Traders</td>
                 <td>Source</td>
-            </tr>
+            </thead>
             <tr>
                 <td>
                     <select name="commodities" id="" wire:model="commodity_id">

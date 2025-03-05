@@ -1,8 +1,8 @@
-<div class="otherinfopanel" >
+<div class="inputpanel" >
     <h3 class="panelhead" >Other Market Information</h3>
     @isset($OtherMarketInfos)
             @foreach ($OtherMarketInfos as $otherinfo)
-                <div class="otherinfoitem">
+                <div class="otherinfoitem" wire:key="{{$otherinfo->id}}">
                     <div class="infoCat">
                         <span>{{$otherinfo->info_type->name}}</span>
                         <div>

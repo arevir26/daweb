@@ -1,4 +1,4 @@
-<div>
+<div class="inputpanel">
     @isset($market_id)
     <h3 class="panelhead">Market Stall Information</h3>
     <form action="" wire:submit.prevent="add({{$market_id}})">
