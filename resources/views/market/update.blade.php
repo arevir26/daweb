@@ -133,6 +133,7 @@
         @isset($market->id)
         <livewire:MarketCommoditiesPanel :market_id="$market->id" />
         <livewire:MarketStallsPanel :market_id="$market->id" />
+        <livewire:MarketOtherInfoPanel :market_id="$market->id" />
         @endisset
         
     </div>
