@@ -1,6 +1,6 @@
 <div>
     @isset($market_id)
-    <h3>Market Stall Information</h3>
+    <h3 class="panelhead">Market Stall Information</h3>
     <form action="" wire:submit.prevent="add({{$market_id}})">
         @csrf
         <table>

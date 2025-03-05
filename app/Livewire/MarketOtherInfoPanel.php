@@ -25,6 +25,9 @@ class MarketOtherInfoPanel extends Component
         if($this->infotype==null)return;
         if($this->isUpdate){
             $otherinfo = OtherMarketInfo::find($this->othermarketinfoID);
+            if($otherinfo==null){
+                $otherinfo = new OtherMarketInfo();
+            }
         }else{
             $otherinfo = new OtherMarketInfo();
         }

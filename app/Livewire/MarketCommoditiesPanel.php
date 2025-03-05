@@ -32,6 +32,9 @@ class MarketCommoditiesPanel extends Component
         }
         if($this->isUpdate){
             $market_commodity = MarketCommodity::find($this->market_commodity_id);
+            if($market_commodity==null){
+                $market_commodity = new MarketCommodity();
+            }
         }else{
             $market_commodity = new MarketCommodity();
         }

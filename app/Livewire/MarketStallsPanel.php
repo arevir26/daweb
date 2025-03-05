@@ -34,6 +34,10 @@ class MarketStallsPanel extends Component
             $market_stall = new MarketStall();
         }else{
             $market_stall = MarketStall::find($this->market_stall_id);
+
+        }
+        if($market_stall==null){
+            $market_stall = new MarketStall();
         }
         $market_stall->market_id = $market->id;
         $market_stall->stall_category = $this->stall_category_id;

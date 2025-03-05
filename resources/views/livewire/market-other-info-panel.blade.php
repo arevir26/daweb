@@ -1,17 +1,17 @@
 <div class="otherinfopanel" >
-    <h3>Other Market Information</h3>
+    <h3 class="panelhead" >Other Market Information</h3>
     @isset($OtherMarketInfos)
             @foreach ($OtherMarketInfos as $otherinfo)
                 <div class="otherinfoitem">
                     <div class="infoCat">
                         <span>{{$otherinfo->info_type->name}}</span>
                         <div>
-                            <a href="#" wire:click.prevent="update({{$otherinfo->id}})">Edit</a>
+                            <a href="#infoinput" wire:click="update({{$otherinfo->id}})">Edit</a>
                             <a href="#" wire:confirm="Do you really want to remove this item?" wire:click.prevent="remove({{$otherinfo->id}})">Remove</a>
                         </div>
                         
                     </div>
-                    <div class="infoTitle">{{$otherinfo->name}}
+                    <div class="descTitle">{{$otherinfo->name}}
                     </div>
                     <p class="infoDesc">{{$otherinfo->desc}}</p>
                 </div>
@@ -20,7 +20,7 @@
 
     <div id="OtherInfoInputPane">
         <form action="" wire:submit.prevent="add">
-            <h5>Add other information:</h4>
+            <h5 id="infoinput" >Additional market information:</h4>
             <textarea id="marketOtherInfo" name="" id="" cols="30" rows="5" wire:model="desc"></textarea>
             <div id="otherinputbottompanel">
                 <select name="" value="" wire:model="infotype" required>

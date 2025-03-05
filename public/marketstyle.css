@@ -171,15 +171,14 @@ div.itemTitle{
 }
 
 .otherinfoitem{
-    background-color: blanchedalmond;
+    border-bottom: solid 1px gray;
 }
 
 .otherinfopanel{
-    background-color: orange;
+    margin: 0.5rem;
 }
 
 .infoCat{
-    background-color: green;
     display: flex;
     justify-content: space-between;
 }
@@ -191,10 +190,14 @@ div.itemTitle{
 
 .infoCat a {
     display: inline-block;
-    background-color: red;
     padding: 0.5rem;
     color: black;
     text-decoration: none;
+}
+
+.descTitle{
+    font-weight: bold;
+    margin: 0.5rem;
 }
 
 .infoDesc{
@@ -202,7 +205,6 @@ div.itemTitle{
 }
 
 #OtherInfoInputPane{
-    background-color: cyan;
     padding: 1rem;
 }
 
@@ -221,4 +223,12 @@ div.itemTitle{
     flex-grow: 1;
     margin-left: 1rem;
     margin-right: 1rem;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.panelhead{
+    border-bottom: dashed 1px grey;
+    border-Top: dashed 1px grey;
+    padding: 1rem 0.5rem;
 }
