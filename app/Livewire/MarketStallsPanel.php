@@ -44,6 +44,10 @@ class MarketStallsPanel extends Component
         $market_stall->stall_count = $this->stall_count;
         $market_stall->stall_owners = $this->stall_owners;
         $market_stall->save();
+        $this->resetFields();
+    }
+
+    private function resetFields(){
         $this->stall_category_id = null;
         $this->stall_count = null;
         $this->stall_owners = null;
@@ -51,8 +55,8 @@ class MarketStallsPanel extends Component
     }
 
     public function remove(MarketStall $stall){
-
         $stall->delete();
+        $this->resetFields();
     }
 
     public function edit(MarketStall $stall){

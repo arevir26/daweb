@@ -53,7 +53,7 @@ class MarketinfoController extends Controller
     {
         $data['market'] = $marketinfo;
         $data['commodities'] = $marketinfo->commodities->all();
-        return view('market.show', $data);
+        return view('market.showv2', $data);
     }
 
     /**

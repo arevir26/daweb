@@ -44,6 +44,10 @@ class MarketCommoditiesPanel extends Component
         $market_commodity->volume = $this->volume;
         $market_commodity->traders = $this->traders;
         $market_commodity->save();
+        $this->resetfields();
+    }
+
+    protected function resetfields(){
         $this->commodity_id = "";
         $this->source = "";
         $this->volume = "";
