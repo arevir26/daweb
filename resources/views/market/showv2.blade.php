@@ -118,7 +118,7 @@
             </tr>
             <tr>
                 <td>GPS Coordinates:</td>
-                <td>
+                <td colspan="2">
                     @if (isset($market->gps_lat)&&isset($market->gps_long))
                         {{$market->gps_lat}}, {{$market->gps_long}}
                     @else
@@ -131,10 +131,10 @@
             </tr>
         </table>
 
-        <h4>Commodities</h4>
+        <h3>Commodities</h3>
         @isset($market->commodities)
         <table>
-            <tr>
+            <tr class="tbheader">
                 <td>Commodity</td>
                 <td>Volume</td>
                 <td>Traders</td>
@@ -148,13 +148,19 @@
                 <td>{{$commodity->source}}</td>
             </tr>
         @endforeach
+        <tr class="tbfooter">
+            <td>Total</td>
+            <td>{{$market->commodities->sum('volume')}}</td>
+            <td>{{$market->commodities->sum('traders')}}</td>
+        </tr>
+        
         </table>
         @endisset
 
         @isset($market->stalls)
-        <h4>Market Stalls</h4>
+        <h3>Market Stalls</h3>
         <table>
-            <tr>
+            <tr class="tbheader">
                 <td>Stall Category</td>
                 <td>Number of Stalls</td>
                 <td>Number of Vendors</td>
@@ -166,6 +172,11 @@
                 <td>{{$stalls->stall_owners}}</td>
             </tr>
         @endforeach
+            <tr class="tbfooter">
+                <td>Total</td>
+                <td>{{$market->stalls->sum('stall_count')}}</td>
+                <td>{{$market->stalls->sum('stall_owners')}}</td>
+            </tr>
         </table>
         @endisset
         @isset($otherInfo)

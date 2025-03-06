@@ -245,6 +245,10 @@ div.itemTitle{
     padding: 1rem 0.5rem;
 }
 
+.tbfooter, .tbheader{
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 800px){
     #main{
         flex-wrap: wrap;
