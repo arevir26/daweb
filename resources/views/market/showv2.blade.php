@@ -130,8 +130,9 @@
                 </td>
             </tr>
         </table>
-    @endisset
-    @isset($market->commodities)
+
+        <h4>Commodities</h4>
+        @isset($market->commodities)
         <table>
             <tr>
                 <td>Commodity</td>
@@ -148,22 +149,37 @@
             </tr>
         @endforeach
         </table>
+        @endisset
+
+        @isset($market->stalls)
+        <h4>Market Stalls</h4>
+        <table>
+            <tr>
+                <td>Stall Category</td>
+                <td>Number of Stalls</td>
+                <td>Number of Vendors</td>
+            </tr>
+        @foreach ($market->stalls as $stalls)
+            <tr>
+                <td>{{$stalls->category->category_name}}</td>
+                <td>{{$stalls->stall_count}}</td>
+                <td>{{$stalls->stall_owners}}</td>
+            </tr>
+        @endforeach
+        </table>
+        @endisset
+        @isset($otherInfo)
+            @foreach ($otherInfo as $info)
+                <div>
+                    <h3>{{$info->info_type->name}}</h3>
+                    <h5>{{$info->name}}</h5>
+                </div>
+                {{$info->desc}}
+            @endforeach
+        @endisset
+
     @endisset
     
-    @isset($market->stalls)
-    <table>
-        <tr>
-            <td>Stall Category</td>
-            <td>Number of Stalls</td>
-            <td>Number of Vendors</td>
-        </tr>
-    @foreach ($market->stalls as $stalls)
-        <tr>
-            <td>{{$stalls->category->category_name}}</td>
-        </tr>
-    @endforeach
-    </table>
-    @endisset
     </div>
 </div>
 
